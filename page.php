@@ -1,6 +1,5 @@
 <?php
 /**
-
  * This template displays the default page content.
  *
  * @package GivingPress Lite
@@ -18,7 +17,7 @@ get_header(); ?>
 		<!-- BEGIN .content -->
 		<div class="content">
 
-		<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
+		<?php if ( is_active_sidebar( 'sidebar-1' ) ||  have_rows('ind-sidebar') ) { ?>
 
 			<!-- BEGIN .eleven columns -->
 			<div class="eleven columns">
@@ -35,9 +34,14 @@ get_header(); ?>
 			</div>
 
 			<!-- BEGIN .five columns -->
+			<?php
+			?>
 			<div class="five columns">
+				<?php
+				get_sidebar();
+				get_template_part('sidebar','individual');
+				?>
 
-				<?php get_sidebar(); ?>
 
 			<!-- END .five columns -->
 			</div>
@@ -48,7 +52,7 @@ get_header(); ?>
 			<div class="sixteen columns">
 
 				<!-- BEGIN .postarea full -->
-				<div class="postarea full clearfix">
+				<div class="postarea full">
 				<div id="breadcrumb"><?php breadcrumb_trail(); ?></div>
 
 					<?php get_template_part( 'loop', 'page' ); ?>
