@@ -1,8 +1,9 @@
 <?php
-
+//require_once ('acf/acf-include.php');
 add_action('after_setup_theme', 'child_theme_setup');
 
 function child_theme_setup() {
+
 
     //init styles
     add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
@@ -33,7 +34,7 @@ function child_theme_setup() {
 
         wp_register_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), '1.2', true); // Custom Script
         wp_enqueue_script('custom'); // Enqueue it!
-        
+
         // Cookie Bar
         wp_register_script('cookie-bar', get_stylesheet_directory_uri() . '/cookie-bar/cookiebar-latest.min.js?theme=white&top=1&tracking=1&thirdparty=1&refreshPage=1&showNoConsent=1&hideDetailsBtn=1&remember=30&privacyPage=https%3A%2F%2Fwww.unigerman.de%2Fde%2Fdatenschutz%2F', array('jquery'), false, true);
         wp_enqueue_script('cookie-bar');
