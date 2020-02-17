@@ -16,8 +16,8 @@ get_header(); ?>
 
 		<!-- BEGIN .content -->
 		<div class="content">
-
-		<?php if ( is_active_sidebar( 'sidebar-1' ) ||  have_rows('ind-sidebar') ) { ?>
+		<?php #if ( is_active_sidebar( 'sidebar-1' ) ||  have_rows('ind-sidebar') ) { ?>
+			<?php if ( have_rows('ind-sidebar-de') ) { ?>
 
 			<!-- BEGIN .eleven columns -->
 			<div class="eleven columns">

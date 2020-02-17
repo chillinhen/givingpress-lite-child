@@ -1,5 +1,10 @@
 <?php
 //require_once ('acf/acf-include.php');
+
+// init custom posts
+require_once('inc/custom-posts.php');
+
+
 add_action('after_setup_theme', 'child_theme_setup');
 
 function child_theme_setup() {
