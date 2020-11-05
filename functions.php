@@ -1,8 +1,13 @@
 <?php
 //require_once ('acf/acf-include.php');
 
+if ( ! defined( '_S_VERSION' ) ) {
+	// Replace the version number of the theme on each release.
+	define( '_S_VERSION', '1.0.1' );
+}
+
 // init custom posts
-require_once('inc/custom-posts.php');
+//require_once('inc/custom-posts.php');
 
 
 add_action('after_setup_theme', 'child_theme_setup');
@@ -21,8 +26,9 @@ function child_theme_setup() {
         wp_register_style('gray', get_stylesheet_directory_uri() . '/css/gray.min.css', array(), '1.0', 'all');
         wp_enqueue_style('gray');
 
-        wp_register_style('child-style', get_stylesheet_directory_uri() . '/css/custom-style.min.css', array('parent-style', 'googlefonts'), '1.0', 'all');
-        wp_enqueue_style('child-style'); // Enqueue it!
+        // wp_register_style('child-style', get_stylesheet_directory_uri() . '/css/custom-style.min.css', array('parent-style', 'googlefonts'), '1.0', 'all');
+        // wp_enqueue_style('child-style'); // Enqueue it!
+        wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/css/custom-style.min.css', array('parent-style', 'googlefonts'), _S_VERSION);
     }
 
     //init scripts

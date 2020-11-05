@@ -427,6 +427,11 @@ body.ie .header-search {
   @media screen and (min-width: 992px) {
     .wpcf7 {
       width: 65%; } }
+  .wp-block-columns .wpcf7 {
+    float: none; }
+    @media screen and (min-width: 992px) {
+      .wp-block-columns .wpcf7 {
+        width: 100% !important; } }
   .wpcf7 + address {
     background: #f3f3f3;
     padding: 1em;

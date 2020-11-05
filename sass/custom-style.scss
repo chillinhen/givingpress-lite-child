@@ -5,6 +5,12 @@
 @import "toolbox/myMixins/breakpoints.scss";
 @import '_variables';
 
+@mixin d-flex{
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
+}
 /*** Sticky Footer ***/
 
 @media screen and (min-width:$screen-md) {
@@ -66,6 +72,10 @@ h6 {
         @media screen and (max-width: $screen-xs) {
             font-size: 1em;
         }
+    }
+    &[class*="advanced-heading"]{
+        margin-top: 2em;
+        margin-bottom: 0;
     }
 }
 
@@ -454,10 +464,12 @@ a:active {
 /*** Forms ***/
 
 .wpcf7 {
-    float: left;
-    @media screen and (min-width: $screen-md) {
-        width: 65%;
-    }
+    // div:not(.wp-block-columns) &{
+    //     float: left;
+    //     @media screen and (min-width: $screen-md) {
+    //         width: 65%;
+    //     }
+    // }
     &+address {
         background: lighten(#eee, 2%);
         padding: 1em;
@@ -491,7 +503,8 @@ form {
     }
     .wpcf7-form-control-wrap>span {
         @extend %clearfix;
-        display: block;
+        @include d-flex;
+        flex-wrap: wrap;
         >.wpcf7-list-item {
             @media screen and (max-width: $screen-sm) {
                 display: block;
@@ -499,7 +512,12 @@ form {
             @media screen and (min-width:$screen-sm) {
                 @include span-columns(4);
                 margin: 0;
-                display: inline-block;
+                @include d-flex;
+                align-items: baseline;
+
+                input[type="checkbox"]{
+                    margin-right: .5em !important;
+                }
             }
         }
         .wpcf7-list-item-label {
