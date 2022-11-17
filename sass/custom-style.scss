@@ -1,9 +1,5 @@
-@import "toolbox/bower_components/bourbon/_bourbon.scss";
-@import "toolbox/bower_components/neat/app/assets/stylesheets/_neat.scss";
-@import "toolbox/myMixins/extends.scss";
-@import "toolbox/myMixins/mixins.scss";
-@import "toolbox/myMixins/breakpoints.scss";
-@import '_variables';
+@import "_breakpoints.scss";
+
 
 /*** Sticky Footer ***/
 
@@ -51,9 +47,9 @@ h6 {
     font-weight: 400;
     margin-top: 0;
     margin-bottom: 1em;
-    color: $color_primary;
+    color: var(--wp--preset--color--primary);
     a:hover {
-        color: $color_primary;
+        color: var(--wp--preset--color--primary);
         opacity: .75;
         text-decoration: none;
     }
@@ -81,7 +77,7 @@ h4 {
         text-transform: uppercase;
         font-size: .875rem;
         font-weight: 600;
-        border-bottom: 1px solid $border-color;
+        border-bottom: 1px solid var(--wp--preset--color--border);
         margin-bottom: 0;
         padding-bottom: 0;
     }
@@ -126,13 +122,13 @@ p {
 a,
 a:link,
 a:visited {
-    color: $color_primary;
+    color: var(--wp--preset--color--primary);
 }
 
 a:focus,
 a:hover,
 a:active {
-    color: $color_primary;
+    color: var(--wp--preset--color--primary);
 }
 
 .grayscale {
@@ -146,6 +142,7 @@ a:active {
             opacity: 0;
         }
     }
+    
 }
 
 #breadcrumb {
@@ -153,7 +150,7 @@ a:active {
     .trail-browse {
         display: none;
     }
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid var(--wp--preset--color--border);
     padding-bottom: .2em;
     margin-bottom: 2em;
     * {
@@ -173,12 +170,12 @@ a:active {
         padding: 0 1em !important;
     }
     @media screen and (min-width:$screen-md)and (orientation:landscape) {
-        @include outer-container(980px);
-        width: 980px;
+        margin: 0 auto;
+        max-width: 980px;
     }
     @media screen and (min-width:$screen-lg)and (orientation:landscape) {
-        @include outer-container(1170px);
-        width: 1170px;
+        margin: 0 auto;
+        max-width: 1170px;
     }
 }
 
@@ -209,46 +206,48 @@ a:active {
         list-style-position: outside;
     }
     body.home & ul li {
-        color: $color_primary;
+        color: var(--wp--preset--color--primary);
         @media screen and (min-width: $screen-sm) {
             font-size: 1.25rem;
         }
     }
     .post-header {
         max-height: 300px;
-        border-bottom: 1px solid $border-color;
+        border-bottom: 1px solid var(--wp--preset--color--border);
         padding-bottom: 2em;
         margin-bottom: .2em;
-        @include align-items(flex-end);
-        @include display(flex);
-        @include justify-content(space-between);
+        a > img + i{visibility: hidden;}
         @media screen and (max-width: $screen-sm) {
-            @include flex-direction(column);
+            flex-direction: column;
         }
-        @media screen and (min-width:$screen-sm+1) {
-            @include flex-direction(row);
+        @media screen and (min-width:769px) {
+            flex-direction: row;
         }
-        >h1 {
-            @media screen and (min-width: $screen-sm + 1) {
-                @include child-flex(3);
-            }
+        >h1, h1 {
             padding-bottom: 0;
             margin-right: 1em;
             word-break:word-break;
         }
-        .logo_cnt {
-            @media screen and (max-width: $screen-xs) {
-                display: none;
-            }
-            a {
-                display: block;
-                i.fa {
-                    display: none;
-                }
-                &:hover {
-                    cursor: pointer;
-                }
-            }
+    }
+}
+
+.logo_cnt {
+    @media screen and (max-width: $screen-xs) {
+        display: none;
+    }
+    a {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        img{
+            object-fit: fill;
+            object-position: center;
+        }
+        i{
+            display: none;
+        }
+        &:hover {
+            cursor: pointer;
         }
     }
 }
@@ -287,7 +286,7 @@ a:active {
 /*** Navigation ***/
 
 .menu-toggle {
-    @media screen and (max-width: $screen-md - 1) {
+    @media screen and (max-width: 991px) {
         display: block;
         &+[class*="menu"] {
             padding-top: 100px;
@@ -295,14 +294,14 @@ a:active {
     }
     margin-right: 2em;
     >i {
-        background: $color_primary;
+        background: var(--wp--preset--color--primary);
     }
 }
 
 .navigation-main {
     font-size: .9rem !important;
     ul.menu {
-        @media screen and (min-width: $screen-md - 1) {
+        @media screen and (min-width: 991px) {
             display: block;
         }
     }
@@ -318,7 +317,7 @@ a:active {
     }
     ul.sub-menu,
     ul.children {
-        @media screen and (min-width: $screen-md - 1) {
+        @media screen and (min-width: 991px) {
             min-width: 300px;
         }
     }
@@ -377,7 +376,9 @@ a:active {
                 size: contain;
                 repeat: no-repeat;
             }
-            @extend %text-indent;
+            text-indent:-9999px;
+            display:block;
+            overflow:hidden;
             @media screen and (-webkit-min-device-pixel-ratio: 2),
             (min-resolution: 192dpi) {
                 background-image: url(../img/logo@2x.jpg);
@@ -484,20 +485,26 @@ form {
             line-height: 1.4;
             +.wpcf7-form-control {
                 @media screen and (min-width: $screen-sm) {
-                    @include span-columns(8);
+                    max-width:75%;flex-basis:75%;
                 }
             }
         }
     }
     .wpcf7-form-control-wrap>span {
-        @extend %clearfix;
+        &:before, &:after {
+            content: "";
+            display: table;
+        }
+        &:after {
+            clear: both;
+        }
         display: block;
         >.wpcf7-list-item {
             @media screen and (max-width: $screen-sm) {
                 display: block;
             }
             @media screen and (min-width:$screen-sm) {
-                @include span-columns(4);
+                max-width:25%;flex-basis:25%;
                 margin: 0;
                 display: inline-block;
             }
@@ -529,8 +536,8 @@ form {
         font-size: 1em;
         line-height: 1.4;
         padding: 8px;
-        border: 1px solid $border-color;
-        box-shadow: inset 1px 1px 1px $border-color;
+        border: 1px solid var(--wp--preset--color--border);
+        box-shadow: inset 1px 1px 1px var(--wp--preset--color--border);
         border-radius: 3px;
         color: #999;
         min-height: 20px;
@@ -543,7 +550,7 @@ form {
     input[type='password'],
     input[type='number'],
     textarea {
-        @include appearance(textfield);
+        appearance:textfield;
     }
     input[type='checkbox'] {
         margin: 0 0 .2em 0;

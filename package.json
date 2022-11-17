@@ -1,0 +1,27 @@
+{
+  "name": "oceanwp-child-theme_mint",
+  "version": "1.0.0",
+  "description": "Ocean WP Child Theme for mint campus",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chillinhen/oceanwp-child-theme_mint.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chillinhen/oceanwp-child-theme_mint/issues"
+  },
+  "homepage": "https://github.com/chillinhen/oceanwp-child-theme_mint#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.49.7",
+    "@fortawesome/fontawesome-free": "^5.15.3"
+  }
+}
