@@ -1,0 +1,93 @@
+{
+    "version": 1,
+    "settings": {
+        "color": {
+            "custom": true,
+            "palette": [
+                {
+                    "name": "Primary",
+                    "slug": "primary",
+                    "color": "#0c4f9d"
+                },
+                {
+                    "name": "Border",
+                    "slug": "border",
+                    "color": "#333333"
+                },
+                {
+                    "name": "Secondary",
+                    "slug": "secondary",
+                    "color": "#2c3c5b"
+                },
+                {
+                    "name": "Dark Grey",
+                    "slug": "dark-grey",
+                    "color": "#333333"
+                },
+                {
+                    "name": "Grey",
+                    "slug": "grey",
+                    "color": "#666666"
+                },
+                {
+                    "name": "Light Grey",
+                    "slug": "light-grey",
+                    "color": "#eeeeee"
+                }
+            ]
+        },
+        "layout": {
+            "contentSize": "1170px",
+            "wideSize": "1050px"
+        },
+        "spacing":{
+            "blockGap": true,
+            "margin": true,
+            "padding": true,
+            "units": [
+                "%",
+                "px",
+                "rem",
+                "vh",
+                "vw"
+                ]
+        },
+        "border": {
+            "customColor": true,
+            "customRadius": true,
+            "customStyle": true,
+            "customWidth": true
+        },
+        "typography": {
+            "customFontSize": true,
+            "lineHeight": true,
+            "fontSizes": [
+                {
+                    "slug": "smaller",
+                    "size": "13px",
+                    "name": "Smaller/ Fussleiste"
+                },
+                {
+                    "slug": "normal",
+                    "size": "16px",
+                    "name": "Normal/ Text"
+                },
+                {
+                    "slug": "small",
+                    "size": "14px",
+                    "name": "h3/ Headline Sidebar"
+                },
+                {
+                    "slug": "large",
+                    "size": "26px",
+                    "name": "h2"
+                },
+                {
+                    "slug": "extra-large",
+                    "size": "32px",
+                    "name": "h1 = Extra-Large"
+                }
+            ]
+        }
+    }
+}

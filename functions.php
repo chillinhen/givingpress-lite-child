@@ -21,7 +21,7 @@ function child_theme_setup() {
         wp_register_style('gray', get_stylesheet_directory_uri() . '/css/gray.min.css', array(), '1.0', 'all');
         wp_enqueue_style('gray');
 
-        wp_register_style('child-style', get_stylesheet_directory_uri() . '/css/custom-style.min.css', array('parent-style', 'googlefonts'), '1.0', 'all');
+        wp_register_style('child-style', get_stylesheet_directory_uri() . '/css/custom-style.css', array('parent-style', 'googlefonts'), '1.1.0', 'all');
         wp_enqueue_style('child-style'); // Enqueue it!
     }
 

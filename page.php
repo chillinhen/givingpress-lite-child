@@ -16,11 +16,6 @@ get_header(); ?>
 
 		<!-- BEGIN .content -->
 		<div class="content">
-		<?php #if ( is_active_sidebar( 'sidebar-1' ) ||  have_rows('ind-sidebar') ) { ?>
-			<?php if ( have_rows('ind-sidebar-de') ) { ?>
-
-			<!-- BEGIN .eleven columns -->
-			<div class="eleven columns">
 
 				<!-- BEGIN .postarea -->
 				<div class="postarea">
@@ -29,41 +24,6 @@ get_header(); ?>
 
 				<!-- END .postarea -->
 				</div>
-
-			<!-- END .eleven columns -->
-			</div>
-
-			<!-- BEGIN .five columns -->
-			<?php
-			?>
-			<div class="five columns">
-				<?php
-				get_sidebar();
-				get_template_part('sidebar','individual');
-				?>
-
-
-			<!-- END .five columns -->
-			</div>
-
-		<?php } else { ?>
-
-			<!-- BEGIN .sixteen columns -->
-			<div class="sixteen columns">
-
-				<!-- BEGIN .postarea full -->
-				<div class="postarea full">
-				<div id="breadcrumb"><?php breadcrumb_trail(); ?></div>
-
-					<?php get_template_part( 'loop', 'page' ); ?>
-
-				<!-- END .postarea full -->
-				</div>
-
-			<!-- END .sixteen columns -->
-			</div>
-
-		<?php } ?>
 
 		<!-- END .content -->
 		</div>
