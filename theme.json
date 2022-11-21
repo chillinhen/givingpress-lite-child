@@ -1,5 +1,5 @@
 {
-    "version": 1,
+    "version": 2,
     "settings": {
         "color": {
             "custom": true,
@@ -33,6 +33,11 @@
                     "name": "Light Grey",
                     "slug": "light-grey",
                     "color": "#eeeeee"
+                },
+                {
+                    "border": "Default Border Color",
+                    "slug"  :  "border",
+                    "color" : "rgba(0,0,0, .12)"
                 }
             ]
         },
@@ -47,6 +52,7 @@
             "units": [
                 "%",
                 "px",
+                "em",
                 "rem",
                 "vh",
                 "vw"

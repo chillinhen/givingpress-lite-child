@@ -145,52 +145,6 @@
 <?php if ( is_home() || is_page_template( 'template-home.php' ) || is_single() || is_404() || is_attachment() || is_archive() || is_search() || is_page() && ! has_post_thumbnail() ) { ?>
 	<?php if ( 'blank' != get_theme_mod( 'header_textcolor' ) || ! empty( $header_image ) ) { ?>
 
-<!-- BEGIN #header -->
-<div id="header">
-
-	<?php if ( ! empty( $header_image )) { ?>
-
-	<!-- BEGIN .custom-header -->
-	<div class="custom-header" <?php if ( ! empty( $header_image ) ) { ?> style="background-image: url(<?php header_image(); ?>);"<?php } ?>>
-
-	<?php } ?>
-
-	<!-- BEGIN #site-info -->
-	<div id="site-info">
-
-		<!-- BEGIN .content -->
-		<div class="content">
-
-			<div id="header-content" <?php if ( ! empty( $header_image ) ) { ?>class="vertical-center"<?php } ?>>
-
-
-
-			</div>
-
-			<?php if ( ! empty( $header_image ) ) { ?>
-
-			<img class="hide-img" src="<?php header_image(); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" alt="<?php echo esc_attr( get_bloginfo() ); ?>" />
-
-			<?php } ?>
-
-		<!-- END .content -->
-		</div>
-
-	<!-- END #site-info -->
-	</div>
-
-	<?php if ( ! empty( $header_image ) ) { ?>
-
-	<!-- BEGIN .custom-header -->
-	</div>
-
-	<?php } ?>
-
-<!-- END #header -->
-</div>
 
 <?php } ?>
 <?php } ?>
-
-<!-- BEGIN .container -->
-<div class="container">
