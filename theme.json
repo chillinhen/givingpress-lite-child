@@ -74,14 +74,19 @@
                     "name": "Smaller/ Fussleiste"
                 },
                 {
+                    "slug": "small",
+                    "size": "14px",
+                    "name": "h3/ Headline Sidebar"
+                },
+                {
                     "slug": "normal",
                     "size": "16px",
                     "name": "Normal/ Text"
                 },
                 {
-                    "slug": "small",
-                    "size": "14px",
-                    "name": "h3/ Headline Sidebar"
+                    "slug": "medium",
+                    "size": "18px",
+                    "name": "Medium/ Text"
                 },
                 {
                     "slug": "large",
@@ -91,7 +96,12 @@
                 {
                     "slug": "extra-large",
                     "size": "32px",
-                    "name": "h1 = Extra-Large"
+                    "name": "h1 = Main Headline"
+                },
+                {
+                    "slug": "huge",
+                    "size": "42px",
+                    "name": "Title = xxl"
                 }
             ]
         }

@@ -40,12 +40,37 @@ h6 {
             font-size: 1em;
         }
     }
+    &.headline {
+        span {
+            text-transform: none;
+            display: block;
+        }
+        @media screen and (max-width:$screen-sm) {
+            font-size: 6vW;
+            line-height: 1.2;
+        }
+        @media screen and (min-width:$screen-md) {
+            letter-spacing: 0;
+        }
+    }
+}
+h1{
+    font-size:  var(--wp--preset--font-size--extra-large);
+}
+h2{
+    font-size:  var(--wp--preset--font-size--large);
+    .sidebar &:first-of-type{
+        font-size:  var(--wp--preset--font-size--small);
+    }
 }
 
 h3,
 h4 {
-    .sidebar & {
-        font-size: 1.25rem;
+    .content &{
+        font-size:  var(--wp--preset--font-size--large);
+    }
+    .sidebar &{
+        font-size:  var(--wp--preset--font-size--medium);
     }
 }
 
@@ -83,21 +108,7 @@ p {
     }
 }
 
-.headline {
-    span {
-        font-size: 1.5rem;
-        text-transform: none;
-        display: block;
-    }
-    @media screen and (max-width:$screen-sm) {
-        font-size: 6vW;
-        line-height: 1.2;
-    }
-    @media screen and (min-width:$screen-md) {
-        font-size: 2rem;
-        letter-spacing: 0;
-    }
-}
+
 /*** header ****/
 
 .header-search {
