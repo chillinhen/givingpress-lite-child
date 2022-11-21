@@ -9,9 +9,6 @@
 
 ?>
 
-<!-- END .container -->
-</div>
-
 <!-- BEGIN .footer -->
 <div class="footer">
 

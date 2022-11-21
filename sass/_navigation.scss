@@ -1,0 +1,89 @@
+/*** Navigation ***/
+
+.menu-toggle {
+    @media screen and (max-width: 991px) {
+        display: block;
+        float: right;
+        &+[class*="menu"] {
+            padding-top: 100px;
+        }
+    }
+    margin-right: 2em;
+    >i {
+        background: var(--wp--preset--color--primary);
+    }
+}
+
+.navigation-main {
+    font-size: .9rem !important;
+    ul.menu {
+        @media screen and (min-width: 991px) {
+            display: block;
+        }
+    }
+    .menu-item {
+        span {
+            font-size: .8rem;
+            font-weight: 300;
+            text-transform: none;
+            @media screen and (max-width: $screen-xs) {
+                display: none;
+            }
+        }
+    }
+    ul.sub-menu,
+    ul.children {
+        @media screen and (min-width: 991px) {
+            min-width: 300px;
+        }
+    }
+}
+
+.menu-item-has-children {
+    .sub-menu {
+        @media screen and (max-width: $screen-smallPad) {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+        }
+    }
+}
+
+#top-nav {
+    @media screen and (max-width: $screen-xs) {
+        background: #fff;
+    }
+    .logo {
+        float: left;
+        display: inline-block;
+        height: 80px;
+        width: 160px;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/logo.jpg);
+            background: {
+                color: transparent;
+                position: left center;
+                size: contain;
+                repeat: no-repeat;
+            }
+            text-indent:-9999px;
+            display:block;
+            overflow:hidden;
+            @media screen and (-webkit-min-device-pixel-ratio: 2),
+            (min-resolution: 192dpi) {
+                background-image: url(../img/logo@2x.jpg);
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    #navigation {
+        @media screen and (min-width: $screen-md) {
+            float: right;
+        }
+    }
+}
