@@ -104,6 +104,7 @@
     min-height: 36px;
     * {
         font-size: small;
+        color:var(--wp--preset--color--grey);
         @media screen and (max-width: $screen-xs) and (orientation: portrait) {
             padding-left: 0;
         }
@@ -112,5 +113,20 @@
                 text-align: left !important;
             }
         }
+    }
+}
+
+/** Sticky Footer **/
+html, body{
+    min-height: 100vH;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    #wrapper{
+        flex:2 0 auto;
+        padding-bottom: 3rem;
+        & + .footer{margin-top: auto;}
     }
 }
