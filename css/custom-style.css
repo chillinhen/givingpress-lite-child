@@ -71,10 +71,6 @@ a:active {
 form#searchform {
   float: left;
 }
-.wpcf7 form {
-  display: inline-block;
-  float: left;
-}
 .wpcf7 form label {
   display: block;
   margin: 0 0 0.25em 0;
@@ -87,32 +83,38 @@ form#searchform {
     flex-basis: 75%;
   }
 }
-form .wpcf7-form-control-wrap > span {
+form .wpcf7-form-control-wrap {
   display: block;
 }
-form .wpcf7-form-control-wrap > span:before, form .wpcf7-form-control-wrap > span:after {
-  content: "";
-  display: table;
+form .wpcf7-form-control-wrap .wpcf7-checkbox .wpcf7-list-item {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  margin: 0;
 }
-form .wpcf7-form-control-wrap > span:after {
-  clear: both;
-}
-@media screen and (max-width: 768px) {
-  form .wpcf7-form-control-wrap > span > .wpcf7-list-item {
-    display: block;
-  }
+form .wpcf7-form-control-wrap .wpcf7-checkbox .wpcf7-list-item input[type=checkbox] {
+  margin-right: 0.5rem;
 }
 @media screen and (min-width: 768px) {
-  form .wpcf7-form-control-wrap > span > .wpcf7-list-item {
-    max-width: 25%;
-    flex-basis: 25%;
-    margin: 0;
-    display: inline-block;
+  form .wpcf7-form-control-wrap .wpcf7-checkbox {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  form .wpcf7-form-control-wrap .wpcf7-checkbox .wpcf7-list-item {
+    flex: 1 0 33%;
+    max-width: 33%;
   }
 }
-form .wpcf7-form-control-wrap > span .wpcf7-list-item-label {
-  min-width: 150px;
-  font-size: small;
+form .wpcf7-form-control-wrap .wpcf7-acceptance {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+form .wpcf7-form-control-wrap .wpcf7-acceptance .wpcf7-list-item {
+  margin: 0;
 }
 form .wpcf7-form-control-wrap.datenschutz .wpcf7-acceptance {
   display: inline-block;

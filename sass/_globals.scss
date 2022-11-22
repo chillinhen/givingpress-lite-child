@@ -65,8 +65,6 @@ form {
         float: left;
     }
     .wpcf7 & {
-        display: inline-block;
-        float: left;
         label {
             display: block;
             margin: 0 0 .25em 0;
@@ -79,30 +77,36 @@ form {
             }
         }
     }
-    .wpcf7-form-control-wrap>span {
-        &:before, &:after {
-            content: "";
-            display: table;
-        }
-        &:after {
-            clear: both;
-        }
+    .wpcf7-form-control-wrap{
         display: block;
-        >.wpcf7-list-item {
-            @media screen and (max-width: $screen-sm) {
-                display: block;
+        .wpcf7-checkbox{
+            .wpcf7-list-item{
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: baseline;
+                margin: 0;
+                input[type="checkbox"]{margin-right: .5rem;}
             }
             @media screen and (min-width:$screen-sm) {
-                max-width:25%;flex-basis:25%;
-                margin: 0;
-                display: inline-block;
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                width: 100%;
+                .wpcf7-list-item{
+                    flex: 1 0 33%;
+                    max-width: 33%;
+                }
             }
         }
-        .wpcf7-list-item-label {
-            min-width: 150px;
-            font-size: small;
+        .wpcf7-acceptance{
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            width: 100%;
+            .wpcf7-list-item{margin: 0;}
         }
     }
+
     .wpcf7-form-control-wrap.datenschutz .wpcf7-acceptance {
         display: inline-block;
         width: 20px;
