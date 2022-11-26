@@ -8,7 +8,8 @@
  */
 
 ?>
-
+<!-- END #wrapper -->
+</div>
 <!-- BEGIN .footer -->
 <div class="footer">
 
@@ -67,9 +68,6 @@
 	</div>
 
 <!-- END .footer -->
-</div>
-
-<!-- END #wrapper -->
 </div>
 <div class="top-fixed">
     <?php

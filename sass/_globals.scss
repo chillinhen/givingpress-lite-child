@@ -44,113 +44,12 @@ a:active {
 /*** Forms ***/
 
 .wpcf7 {
-    float: left;
-    @media screen and (min-width: $screen-md) {
-        width: 65%;
-    }
+    width:100%;
     &+address {
         background: lighten(#eee, 2%);
         padding: 1em;
         font-style: normal;
         margin-left: 2em;
-        float: right;
-        @media screen and (max-width: $screen-md) {
-            width: 100%;
-        }
-    }
-}
-
-form {
-    &#searchform {
-        float: left;
-    }
-    .wpcf7 & {
-        display: inline-block;
-        float: left;
-        label {
-            display: block;
-            margin: 0 0 .25em 0;
-            padding-right: 1em;
-            line-height: 1.4;
-            +.wpcf7-form-control {
-                @media screen and (min-width: $screen-sm) {
-                    max-width:75%;flex-basis:75%;
-                }
-            }
-        }
-    }
-    .wpcf7-form-control-wrap>span {
-        &:before, &:after {
-            content: "";
-            display: table;
-        }
-        &:after {
-            clear: both;
-        }
-        display: block;
-        >.wpcf7-list-item {
-            @media screen and (max-width: $screen-sm) {
-                display: block;
-            }
-            @media screen and (min-width:$screen-sm) {
-                max-width:25%;flex-basis:25%;
-                margin: 0;
-                display: inline-block;
-            }
-        }
-        .wpcf7-list-item-label {
-            min-width: 150px;
-            font-size: small;
-        }
-    }
-    .wpcf7-form-control-wrap.datenschutz .wpcf7-acceptance {
-        display: inline-block;
-        width: 20px;
-        float: left;
-        margin-bottom: 60px;
-        .wpcf7-list-item {
-            width: auto;
-        }
-    }
-    input[type='url'],
-    input[type='tel'],
-    input[type='email'],
-    input[type='text'],
-    input[type='password'],
-    input[type='number'],
-    select,
-    textarea {
-        background: #f9f9f9;
-        font-family: inherit;
-        font-size: 1em;
-        line-height: 1.4;
-        padding: 8px;
-        border: 1px solid var(--wp--preset--color--border);
-        box-shadow: inset 1px 1px 1px var(--wp--preset--color--border);
-        border-radius: 3px;
-        color: #999;
-        min-height: 20px;
-        width: 100%;
-    }
-    input[type='url'],
-    input[type='tel'],
-    input[type='email'],
-    input[type='text'],
-    input[type='password'],
-    input[type='number'],
-    textarea {
-        appearance:textfield;
-    }
-    input[type='checkbox'] {
-        margin: 0 0 .2em 0;
-    }
-    select {
-        &:not([multiple]) {
-            height: 40px;
-        }
-        &[multiple] {
-            min-height: 150px;
-        }
     }
 }
 
