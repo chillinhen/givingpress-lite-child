@@ -130,3 +130,16 @@ body{
         & + .footer{margin-top: auto;}
     }
 }
+/** Grid **/
+body #breadcrumb + .is-layout-flex{
+	@media screen and (min-width:$screen-pad-landscape){
+        gap:4rem;
+    }
+}
+#wrapper{
+    .is-layout-constrained.wp-block-group{
+        @media screen and (max-width:$screen-pad-landscape){
+            padding:0 2rem;
+        }
+    }
+}
