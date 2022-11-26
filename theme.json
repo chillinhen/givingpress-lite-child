@@ -35,6 +35,11 @@
                     "color": "#eeeeee"
                 },
                 {
+                    "name": "Input Fields",
+                    "slug": "input-fields",
+                    "color": "#f9f9f9"
+                },
+                {
                     "border": "Default Border Color",
                     "slug"  :  "border",
                     "color" : "rgba(0,0,0, .12)"

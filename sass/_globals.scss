@@ -44,117 +44,12 @@ a:active {
 /*** Forms ***/
 
 .wpcf7 {
-    float: left;
-    @media screen and (min-width: $screen-md) {
-        width: 65%;
-    }
+    width:100%;
     &+address {
         background: lighten(#eee, 2%);
         padding: 1em;
         font-style: normal;
         margin-left: 2em;
-        float: right;
-        @media screen and (max-width: $screen-md) {
-            width: 100%;
-        }
-    }
-}
-
-form {
-    &#searchform {
-        float: left;
-    }
-    .wpcf7 & {
-        label {
-            display: block;
-            margin: 0 0 .25em 0;
-            padding-right: 1em;
-            line-height: 1.4;
-            +.wpcf7-form-control {
-                @media screen and (min-width: $screen-sm) {
-                    max-width:75%;flex-basis:75%;
-                }
-            }
-        }
-    }
-    .wpcf7-form-control-wrap{
-        display: block;
-        .wpcf7-checkbox{
-            .wpcf7-list-item{
-                display: flex;
-                flex-wrap: nowrap;
-                align-items: baseline;
-                margin: 0;
-                input[type="checkbox"]{margin-right: .5rem;}
-            }
-            @media screen and (min-width:$screen-sm) {
-                display: flex;
-                justify-content: flex-start;
-                flex-wrap: wrap;
-                width: 100%;
-                .wpcf7-list-item{
-                    flex: 1 0 33%;
-                    max-width: 33%;
-                }
-            }
-        }
-        .wpcf7-acceptance{
-            display: flex;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            width: 100%;
-            .wpcf7-list-item{margin: 0;}
-        }
-    }
-
-    .wpcf7-form-control-wrap.datenschutz .wpcf7-acceptance {
-        display: inline-block;
-        width: 20px;
-        float: left;
-        margin-bottom: 60px;
-        .wpcf7-list-item {
-            width: auto;
-        }
-    }
-    input[type='url'],
-    input[type='tel'],
-    input[type='email'],
-    input[type='text'],
-    input[type='password'],
-    input[type='number'],
-    select,
-    textarea {
-        background: #f9f9f9;
-        font-family: inherit;
-        font-size: 1em;
-        line-height: 1.4;
-        padding: 8px;
-        border: 1px solid var(--wp--preset--color--border);
-        box-shadow: inset 1px 1px 1px var(--wp--preset--color--border);
-        border-radius: 3px;
-        color: #999;
-        min-height: 20px;
-        width: 100%;
-    }
-    input[type='url'],
-    input[type='tel'],
-    input[type='email'],
-    input[type='text'],
-    input[type='password'],
-    input[type='number'],
-    textarea {
-        appearance:textfield;
-    }
-    input[type='checkbox'] {
-        margin: 0 0 .2em 0;
-    }
-    select {
-        &:not([multiple]) {
-            height: 40px;
-        }
-        &[multiple] {
-            min-height: 150px;
-        }
     }
 }
 
